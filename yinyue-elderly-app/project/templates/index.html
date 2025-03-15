@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Buddy for Elders</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</head>
+<body>
+    
+    <div class="chat-container">
+        <div class="chat-left">
+            <div class="chat-header">Your AI Buddy Is Here!</div>
+            <div class="chat-display" id="chatDisplay">
+                <div class="bot-message">Hi! What's up?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message here...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            <div class="recording-controls">
+                <button id="startRecording" onclick="startRecording()">Start Recording</button>
+                <button id="stopRecording" onclick="stopRecording()" disabled>Stop Recording</button>
+                <div id="recordingStatus"></div>
+            </div>
+            <footer>Text-to-Speech and Speech-to-Text Enabled</footer>
+        </div>
+        <div class="chat-right">
+            <div class="search-music">
+                <h3>Search For Background Music</h3>
+                <input type="text" placeholder="Search Spotify (coming soon...)">
+            </div>
+            <div>
+                <h4>Chat History</h4>
+                <div class="chat-history" id="chatHistory">
+                    <p>Loading history...</p>
+                </div>
+            </div>
+            <div>
+                <h4>Guess You Would Like to Know:</h4>
+                <div class="music-suggestions">
+                    <p>Suggestions (coming soon)</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+</body>
+</html>
