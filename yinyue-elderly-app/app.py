@@ -1,11 +1,13 @@
-from flask import Flask, request, jsonify, render_template, session
+from flask import Flask, request, jsonify, render_template, session, url_for
 from gtts import gTTS
 import speech_recognition as sr
 from openai import OpenAI
 import os
 from flask_session import Session
 
-app = Flask(__name__, static_folder="project/static", template_folder="project/templates")
+app = Flask(__name__, 
+            static_folder="project/static", 
+            template_folder="project/templates")
 
 # Session configuration for chat history
 app.config["SESSION_PERMANENT"] = False
@@ -111,9 +113,26 @@ def get_history():
     return jsonify({"history": history})
 
 # Home route for frontend
-@app.route("/")
+@app.route('/')
 def home():
-    return render_template("index.html")
+    return render_template('home.html')  
 
-if __name__ == "__main__":
+@app.route('/menu')
+def menu():
+    return render_template('menu.html')  
+
+@app.route('/ai-support')
+def ai_support():
+    return render_template('index.html') 
+
+@app.route('/about')
+def about():
+    return "<h2>About us - coming soon</h2>"
+
+if __name__ == '__main__':
     app.run(debug=True)
+
+if __name__ == '__main__':
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, use_reloader=False, port=port)

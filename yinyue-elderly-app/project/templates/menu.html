@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+</head>
+<body class="menu-body">
+    <div class="top-bar">
+        <div class="settings">
+            <span class="gear">⚙️</span>
+            <span class="label">Settings</span>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+            <button>🔍</button>
+        </div>
+    </div>
+
+    <div class="menu-grid">
+        <a href="{{ url_for('about') }}" class="menu-item">About us</a>
+        <a href="{{ url_for('ai_support') }}" class="menu-item">AI Chat &<br>Emotional Support</a>
+        <a href="#" class="menu-item">Virtual Senior<br>College</a>
+        <a href="{{ url_for('home') }}" class="menu-item">Connect<br>to Home</a>
+        <a href="#" class="menu-item">Elder<br>Friendly Products</a>
+    </div>
+
+    <div class="bottom-right" onclick="showVideo()">
+        ▶️<br><span>Video<br>instructions</span>
+    </div>
+    
+    <!-- Hidden YouTube modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-box">
+            <span class="close" onclick="hideVideo()">✖</span>
+            <iframe width="400" height="225" 
+                src="https://www.youtube.com/embed/l9CZykYZkOQ" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    function showVideo() {
+        document.getElementById('videoModal').style.display = 'flex';
+    }
+
+    function hideVideo() {
+        document.getElementById('videoModal').style.display = 'none';
+    }
+</script>
+
+</html>

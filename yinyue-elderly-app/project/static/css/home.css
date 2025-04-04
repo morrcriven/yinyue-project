@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #dcd6f7, #c9c9ff);
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px;
+    height: 100vh;
+    background-image: url("https://i.ibb.co/sRV8V1Y/sunset-beach.jpg"); /* Replace with your own */
+    background-size: cover;
+    color: #2c2c2c;
+}
+
+.left-text {
+    max-width: 40%;
+}
+
+.bold {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2e2e4f;
+    line-height: 1.2;
+}
+
+.start-button {
+    background-color: #9ca3af;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 25px;
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.right-text {
+    max-width: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}

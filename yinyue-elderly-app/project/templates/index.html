@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Buddy for Elders</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </head>
@@ -12,6 +12,9 @@
     
     <div class="chat-container">
         <div class="chat-left">
+            <a href="{{ url_for('menu') }}">
+                <button class="back-button">⬅️ Back to Menu</button>
+            </a>            
             <div class="chat-header">Your AI Buddy Is Here!</div>
             <div class="chat-display" id="chatDisplay">
                 <div class="bot-message">Hi! What's up?</div>
